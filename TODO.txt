@@ -1,0 +1,15 @@
+- Créer le diagramme de la base de données (aidez vous de la page d'accueil et des informations demandées ci-dessous)
+- Insérer des données de test
+
+- Découper le site avec header / footer / menu
+- Afficher dynamiquement la liste des projets sur la page d'accueil
+- Ajouter un lien pour afficher sur une nouvelle page les détails d'un projet
+
+- Sur la page de détail d'un projet, afficher...
+   - Le titre + image + description du projet + prix + catégorie
+   - La durée du projet en jour
+   - La liste des personnes ayant participées au projet
+   - Une liste d'images secondaires du projet
+ 
+- Créer une page affichant la liste des projets d'une catégorie
+ainsi que des liens sur la catégorie d'un projet
