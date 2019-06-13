@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . "/../security.php"; ?>
+<?php
+require_once __DIR__ . "/../../config/parameters.php";
+require_once __DIR__ . "/../security.php";
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -7,7 +10,7 @@
     <title>Administration</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= SITE_ADMIN; ?>node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -26,14 +29,14 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="<?= SITE_ADMIN; ?>css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Administration</a>
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="logout.php">Déconnexion</a>
+            <a class="nav-link" href="<?= SITE_ADMIN; ?>logout.php">Déconnexion</a>
         </li>
     </ul>
 </nav>
