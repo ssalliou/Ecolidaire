@@ -8,6 +8,13 @@ require_once __DIR__ . "/../../layout/header.php";
 
     <h1>Gestion des catégories</h1>
 
+    <a href="create-form.php" class="btn btn-primary">
+        <i class="fa fa-plus"></i>
+        Ajouter
+    </a>
+
+    <hr>
+
     <table class="table table-striped table-bordered">
         <thead class="thead-light">
         <tr>
