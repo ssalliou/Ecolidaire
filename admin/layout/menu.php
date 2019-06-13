@@ -6,6 +6,12 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?= SITE_ADMIN; ?>crud/project/">
+            <i class="fa fa-briefcase"></i>
+            Projets
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?= SITE_ADMIN; ?>crud/category/">
             <i class="fa fa-tags"></i>
             Catégories
