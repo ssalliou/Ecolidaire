@@ -152,7 +152,8 @@ function searchProjects(string $search, ?int $categoryId) : array {
             project.*,
             DATE_FORMAT(project.date_start, '%d/%m/%Y') AS date_start_format,
             category.label AS category,
-            COUNT(phm.member_id) AS nb_members
+            COUNT(phm.member_id) AS nb_members,
+            MATCH(project.title, project.description) AGAINST ('$search') AS score
         FROM project
         INNER JOIN category ON project.category_id = category.id
         LEFT JOIN project_has_member AS phm ON project.id = phm.project_id
@@ -168,7 +169,7 @@ function searchProjects(string $search, ?int $categoryId) : array {
     }
 
     $query .= " GROUP BY project.id
-                ORDER BY project.date_start DESC
+                ORDER BY score DESC
     ";
 
     $stmt = $connection->prepare($query);
@@ -210,6 +211,27 @@ function insertCategory(string $label) : bool {
     return $stmt->execute();
 }
 
+function getUserByEmailPassword(string $email, string $password) {
+    global $connection;
+
+    $query = "SELECT * FROM user WHERE email = :email";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+
+    $user = $stmt->fetch();
+
+    if (!$user) {
+        return false;
+    }
+
+    if (password_verify($password, $user["password"])) {
+        return $user;
+    } else {
+        return false;
+    }
+}
 
 
 

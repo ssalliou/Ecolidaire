@@ -51,7 +51,7 @@
                 <li><a href="#">A propos</a></li>
                 <li><a href="#">Nos actions</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="register.php">Mon compte</a></li>
+                <li><a href="admin/">Mon compte</a></li>
             </ul>
         </nav>
     </div>
