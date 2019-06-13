@@ -26,14 +26,20 @@ require_once __DIR__ . "/../../layout/header.php";
         <?php foreach ($categories as $category) : ?>
             <tr>
                 <td><?= $category["label"]; ?></td>
-                <td>
-                    <form method="post" action="delete-query.php">
-                        <input type="hidden" name="id" value="<?= $category["id"]; ?>">
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fa fa-trash"></i>
-                            Supprimer
-                        </button>
-                    </form>
+                <td class="actions">
+                    <div class="d-flex justify-content-around">
+                        <a href="update-form.php?id=<?= $category["id"]; ?>" class="btn btn-warning">
+                            <i class="fa fa-edit"></i>
+                            Modifier
+                        </a>
+                        <form method="post" action="delete-query.php">
+                            <input type="hidden" name="id" value="<?= $category["id"]; ?>">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                                Supprimer
+                            </button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>
