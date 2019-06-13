@@ -26,7 +26,15 @@ require_once __DIR__ . "/../../layout/header.php";
         <?php foreach ($categories as $category) : ?>
             <tr>
                 <td><?= $category["label"]; ?></td>
-                <td></td>
+                <td>
+                    <form method="post" action="delete-query.php">
+                        <input type="hidden" name="id" value="<?= $category["id"]; ?>">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-trash"></i>
+                            Supprimer
+                        </button>
+                    </form>
+                </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
